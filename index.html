@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.manifest">
+
+<head>
+	<meta charset="utf-8">
+	<title> 2048 </title>
+	<link href="css/style.css" rel="stylesheet" type="text/css"> 
+	<!--
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  -->
+   	<script src="js/jquery-1.9.1.min.js"></script>
+
+</head>
+
+<body>
+	<div class="main">
+		<header>
+			<h1> 2048 </h1>
+			<div id="score"> 0 </div>
+			<div id="best"> 0 </div>
+		</header>
+
+		<div class = "game">
+			<div id="grid">
+				<div id="0"> </div>   <div id="1"> </div>    <div id="2"> </div>    <div id="3"> </div>
+				<div id="4"> </div>   <div id="5"> </div>    <div id="6"> </div>    <div id="7"> </div>
+				<div id="8"> </div>   <div id="9"> </div>    <div id="10"> </div>    <div id="11"> </div>
+				<div id="12"> </div>   <div id="13"> </div>    <div id="14"> </div>    <div id="15"> </div> 
+			</div>
+			<div class="tile container"> 
+			</div>
+		</div>
+
+		<div class="game-explanation"> use your <strong>arrow keys </strong> to move the tiles. </div>
+	</div>
+	<script src="js/gameManager2.js"> </script>
+</body>
+</html>

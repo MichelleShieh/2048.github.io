@@ -406,12 +406,24 @@ document.onkeydown = function(e) {
 	console.log(grid[2][0],grid[2][1],grid[2][2],grid[2][3]);
 	console.log(grid[3][0],grid[3][1],grid[3][2],grid[3][3]);
 	*/
+	
+	var gridBefore = [[NaN,NaN,NaN,NaN],[NaN,NaN,NaN,NaN],[NaN,NaN,NaN,NaN],[NaN,NaN,NaN,NaN]];
+	for(var i=0;i<4;i++)
+		for(var j=0;j<4;j++)
+			gridBefore[i][j] = grid[i][j];
+
 	if (keynum===0 || keynum===1 || keynum===2 || keynum===3){
 	moveGrid1(keynum);
 	var animation=mergeGrid(keynum);
 	moveGrid2(keynum,animation);
 
-	randomCreate();
+	var changed = false;
+	for(var i=0;i<4;i++)
+		for(var j=0;j<4;j++)
+			if(!(isNaN(gridBefore[i][j])&&isNaN(grid[i][j])) && gridBefore[i][j] != grid[i][j])
+				changed = true;
+	if(changed)
+		randomCreate();
 	
 	update(animation);
 	isGameOver();
